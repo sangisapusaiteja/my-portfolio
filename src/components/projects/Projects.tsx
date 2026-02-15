@@ -26,15 +26,17 @@ function ProjectCard({ project, index, isInView }: ProjectCardProps) {
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ delay: index * 0.15, duration: 0.5 }}
-      whileHover={{ scale: 1.01, y: -4 }}
-      className="glass p-6 sm:p-8 rounded-2xl relative overflow-hidden group cursor-pointer"
+      transition={{ delay: index * 0.15, duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
+      whileHover={{ scale: 1.02, y: -8 }}
+      className="glass p-6 sm:p-8 rounded-2xl relative overflow-hidden group cursor-pointer will-change-transform"
     >
       {/* Gradient Border Animation */}
       <div
-        className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-2xl blur-xl`}
+        className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-20 transition-all duration-500 rounded-2xl blur-xl`}
       />
-      <div />
+
+      {/* Subtle inner glow */}
+      <div className="absolute inset-0 bg-linear-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       <div className="relative z-10">
         {/* Title */}

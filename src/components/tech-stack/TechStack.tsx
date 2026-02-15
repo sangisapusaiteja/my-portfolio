@@ -20,18 +20,21 @@ function TechCard({ tech, index, isInView }: TechCardProps) {
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
       animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-      transition={{ delay: index * 0.05, duration: 0.4 }}
-      whileHover={{ scale: 1.03, y: -2 }}
-      className="glass p-4 sm:p-5 md:p-6 rounded-xl text-center cursor-pointer glow-blue group relative overflow-hidden"
+      transition={{ delay: index * 0.05, duration: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
+      whileHover={{ scale: 1.05, y: -8 }}
+      className="glass p-6 sm:p-8 rounded-2xl text-center cursor-pointer group relative overflow-hidden will-change-transform"
     >
+      {/* Gradient Border Animation */}
+      <div className="absolute inset-0 bg-linear-to-br from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl blur-sm" />
+
       {/* Glow effect on hover */}
-      <div className="absolute inset-0 bg-linear-to-br from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       <div className="relative z-10">
-        <h3 className="text-base sm:text-lg font-bold text-white group-hover:gradient-text transition-all duration-300">
+        <h3 className="text-lg sm:text-xl font-bold text-white group-hover:gradient-text transition-all duration-300">
           {tech.name}
         </h3>
-        <span className="text-xs text-gray-500 mt-1 sm:mt-2 block">
+        <span className="text-xs sm:text-sm text-gray-400 mt-2 sm:mt-3 block group-hover:text-gray-300 transition-colors duration-300">
           {tech.category}
         </span>
       </div>

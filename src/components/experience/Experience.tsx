@@ -24,14 +24,14 @@ function TimelineItem({ experience, index, isInView }: TimelineItemProps) {
       className="relative"
     >
       {/* Timeline Line - hidden on mobile, shown on lg */}
-      <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-primary via-secondary to-transparent" />
+      <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-linear-to-b from-primary via-secondary to-transparent" />
 
       {/* Timeline Dot */}
       <motion.div
         initial={{ scale: 0 }}
         animate={itemInView ? { scale: 1 } : { scale: 0 }}
         transition={{ delay: index * 0.2 + 0.3, duration: 0.4 }}
-        className="hidden lg:flex absolute left-1/2 top-8 transform -translate-x-1/2 w-6 h-6 rounded-full bg-gradient-to-r from-primary to-secondary glow-blue z-10 items-center justify-center"
+        className="hidden lg:flex absolute left-1/2 top-8 transform -translate-x-1/2 w-6 h-6 rounded-full bg-linear-to-r from-primary to-secondary glow-blue z-10 items-center justify-center"
       >
         <div className="w-3 h-3 rounded-full bg-background" />
       </motion.div>
@@ -39,9 +39,12 @@ function TimelineItem({ experience, index, isInView }: TimelineItemProps) {
       {/* Content Card */}
       <div className={`flex w-full lg:w-auto ${index % 2 === 0 ? "justify-start lg:pr-[calc(50%+3rem)]" : "justify-start lg:justify-end lg:pl-[calc(50%+3rem)]"} mb-8 sm:mb-12 lg:mb-16`}>
         <motion.div
-          whileHover={{ scale: 1.02 }}
-          className="glass p-6 sm:p-8 rounded-2xl w-full lg:max-w-2xl glow-purple group cursor-pointer"
+          whileHover={{ scale: 1.02, y: -8 }}
+          transition={{ duration: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
+          className="glass p-6 sm:p-8 rounded-2xl w-full lg:max-w-2xl group cursor-pointer relative overflow-hidden will-change-transform"
         >
+          {/* Gradient glow on hover */}
+          <div className="absolute inset-0 bg-linear-to-br from-primary/10 via-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
           {/* Header */}
           <div className="flex items-start justify-between mb-3 sm:mb-4">
             <div className="flex items-center gap-2 sm:gap-3">
@@ -73,7 +76,7 @@ function TimelineItem({ experience, index, isInView }: TimelineItemProps) {
                 transition={{ delay: index * 0.2 + 0.5 + i * 0.1 }}
                 className="flex items-start gap-3 text-gray-300"
               >
-                <div className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-secondary mt-2 flex-shrink-0" />
+                <div className="w-2 h-2 rounded-full bg-linear-to-r from-primary to-secondary mt-2 shrink-0" />
                 <span className="text-sm leading-relaxed">{achievement}</span>
               </motion.li>
             ))}
@@ -136,7 +139,7 @@ export default function Experience() {
             transition={{ delay: experiences.length * 0.2 + 0.5 }}
             className="flex justify-center mt-8"
           >
-            <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary via-secondary to-accent glow-cyan flex items-center justify-center">
+            <div className="w-12 h-12 rounded-full bg-linear-to-r from-primary via-secondary to-accent glow-cyan flex items-center justify-center">
               <div className="w-6 h-6 rounded-full bg-background" />
             </div>
           </motion.div>

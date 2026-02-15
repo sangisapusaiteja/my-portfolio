@@ -72,16 +72,36 @@ export default function Navigation() {
               ))}
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - Enhanced */}
             <motion.button
-              whileTap={{ scale: 0.9 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden bg-white/10 p-2 rounded-lg"
+              className="md:hidden relative glass p-3 rounded-xl glow-blue group overflow-hidden"
             >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6 text-white" />
-              ) : (
-                <Menu className="w-6 h-6 text-white" />
+              {/* Gradient background on hover */}
+              <div className="absolute inset-0 bg-linear-to-br from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+              <motion.div
+                animate={{ rotate: isMobileMenuOpen ? 90 : 0 }}
+                transition={{ duration: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
+                className="relative z-10"
+              >
+                {isMobileMenuOpen ? (
+                  <X className="w-6 h-6 text-white" />
+                ) : (
+                  <Menu className="w-6 h-6 text-white" />
+                )}
+              </motion.div>
+
+              {/* Pulse animation when menu is open */}
+              {isMobileMenuOpen && (
+                <motion.div
+                  initial={{ scale: 0, opacity: 1 }}
+                  animate={{ scale: 2, opacity: 0 }}
+                  transition={{ duration: 1, repeat: Infinity }}
+                  className="absolute inset-0 rounded-xl border-2 border-primary"
+                />
               )}
             </motion.button>
           </div>
@@ -92,44 +112,127 @@ export default function Navigation() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-30 md:hidden"
           >
-            {/* Backdrop */}
+            {/* Enhanced Backdrop with animated gradient */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+              className="absolute inset-0 bg-black/90 backdrop-blur-xl"
+              style={{
+                background: 'radial-gradient(ellipse at top right, rgba(59, 130, 246, 0.15) 0%, rgba(10, 10, 10, 0.95) 50%), radial-gradient(ellipse at bottom left, rgba(168, 85, 247, 0.15) 0%, rgba(10, 10, 10, 0.95) 50%)'
+              }}
             />
 
             {/* Menu Content */}
             <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ duration: 0.3 }}
-              className="absolute right-0 top-0 bottom-0 w-3/4 max-w-sm bg-[#0a0a0a] border-l border-white/10 p-8"
+              initial={{ x: "100%", opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: "100%", opacity: 0 }}
+              transition={{ duration: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
+              className="absolute right-0 top-0 bottom-0 w-4/5 max-w-sm glass border-l-2 border-primary/30 p-8 overflow-y-auto"
+              style={{
+                background: 'linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(20, 20, 30, 0.95) 100%)'
+              }}
             >
-              <div className="flex flex-col gap-6 mt-20">
+              {/* Decorative gradient orbs */}
+              <div className="absolute top-20 right-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl" />
+              <div className="absolute bottom-40 left-10 w-40 h-40 bg-secondary/20 rounded-full blur-3xl" />
+
+              {/* Header Section */}
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="relative z-10 mb-12 mt-8"
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-1 h-8 bg-linear-to-b from-primary to-secondary rounded-full" />
+                  <h2 className="text-xl font-bold gradient-text">Navigation</h2>
+                </div>
+                <p className="text-xs text-gray-500 ml-4">Explore my portfolio</p>
+              </motion.div>
+
+              {/* Navigation Items */}
+              <div className="flex flex-col gap-3 relative z-10">
                 {navItems.map((item, index) => (
                   <motion.button
                     key={item.name}
                     onClick={() => scrollToSection(item.href)}
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="text-left text-2xl font-bold text-gray-300 hover:text-white hover:gradient-text transition-all duration-300 cursor-pointer"
+                    transition={{
+                      delay: 0.15 + index * 0.08,
+                      duration: 0.5,
+                      ease: [0.34, 1.56, 0.64, 1]
+                    }}
+                    whileHover={{ x: 8 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="group relative text-left cursor-pointer"
                   >
-                    {item.name}
+                    {/* Hover background */}
+                    <div className="absolute inset-0 bg-linear-to-r from-primary/10 to-secondary/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
+                    <div className="absolute inset-0 glass opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
+
+                    {/* Content */}
+                    <div className="relative flex items-center gap-4 p-4 rounded-xl">
+                      {/* Index number */}
+                      <div className="w-8 h-8 rounded-lg bg-linear-to-br from-primary/20 to-secondary/20 border border-primary/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <span className="text-xs font-bold gradient-text">
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
+                      </div>
+
+                      {/* Item name */}
+                      <div className="flex-1">
+                        <h3 className="text-lg font-bold text-gray-300 group-hover:text-white group-hover:gradient-text transition-all duration-300">
+                          {item.name}
+                        </h3>
+                      </div>
+
+                      {/* Arrow indicator */}
+                      <motion.div
+                        initial={{ x: -5, opacity: 0 }}
+                        animate={{ x: 0, opacity: 0 }}
+                        whileHover={{ x: 0, opacity: 1 }}
+                        className="text-primary"
+                      >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </motion.div>
+                    </div>
+
+                    {/* Bottom border gradient */}
+                    <div className="absolute bottom-0 left-4 right-4 h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
                   </motion.button>
                 ))}
               </div>
+
+              {/* Footer decoration */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="relative z-10 mt-auto pt-8"
+              >
+                <div className="glass p-4 rounded-xl border border-primary/20">
+                  <p className="text-xs text-gray-500 text-center">
+                    © 2026 Portfolio
+                  </p>
+                  <div className="flex justify-center gap-2 mt-2">
+                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                    <div className="w-2 h-2 rounded-full bg-secondary animate-pulse" style={{ animationDelay: '0.2s' }} />
+                    <div className="w-2 h-2 rounded-full bg-accent animate-pulse" style={{ animationDelay: '0.4s' }} />
+                  </div>
+                </div>
+              </motion.div>
             </motion.div>
           </motion.div>
         )}

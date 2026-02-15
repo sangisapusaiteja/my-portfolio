@@ -60,6 +60,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 4rem; /* Accounts for fixed headers */
   }
 
   body {
@@ -68,6 +69,16 @@
     font-family: var(--font-sans), Arial, Helvetica, sans-serif;
     overflow-x: hidden;
     position: relative;
+  }
+
+  /* Smooth section snap for better UX */
+  main {
+    scroll-snap-type: y proximity;
+  }
+
+  section {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
   }
 }
 
@@ -120,6 +131,16 @@ body::after {
   -webkit-backdrop-filter: blur(var(--blur-glass));
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-glass);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Performance optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-transform:hover {
+  will-change: auto;
 }
 
 /* Gradient text */

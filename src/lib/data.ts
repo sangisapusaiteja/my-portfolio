@@ -5,7 +5,7 @@
 // --- Personal Info ---
 export const personalInfo = {
   name: "Saiteja Sangisapu",
-  logo: "SS",
+  logo: "ST",
   greeting: "Hi, my name is",
   description:
     "Crafting exceptional digital experiences with modern web technologies. Specialized in building scalable full-stack applications with a focus on performance and user experience.",
@@ -125,8 +125,9 @@ export const projects: Project[] = [
     title: "AOL US Landing Pages",
     description:
       "High-performance, visually accurate landing pages developed for the US market. Focused on responsive UI implementation, UX optimization, and brand consistency while enhancing user engagement and conversion alignment with global design standards.",
-    tech: ["Tailwind CSS", "JavaScript"],
+    tech: ["Tailwind CSS", "Next.js", "React.js"],
     gradient: "from-pink-500 to-rose-500",
+    liveLink: "https://www.artofliving.org/us-en",
   },
   {
     title: "Common Harmony",
@@ -141,8 +142,17 @@ export const projects: Project[] = [
       "Full-stack real-time chat application supporting one-on-one and group conversations. Implemented room creation, secure room entry, real-time messaging via Supabase subscriptions, and profile picture uploads with PostgreSQL-backed data management.",
     tech: ["Next.js", "PostgreSQL", "Supabase", "TypeScript"],
     liveLink: "https://connect-together-st.vercel.app/",
-    githubLink: "#",
+    githubLink: "https://github.com/sangisapusaiteja/connect-together",
     gradient: "from-purple-500 to-violet-500",
+  },
+  {
+    title: "Skill Connect",
+    description:
+      "Comprehensive skill-sharing platform connecting learners with experts across various domains. Implemented user authentication, profile management, course creation, and secure payment processing using Stripe API for seamless transactions.",
+    tech: ["Next.js", "Tailwind CSS", "PostgreSQL", "Supabase"],
+    liveLink: "https://skillconnect-2025.vercel.app/",
+    githubLink: "https://github.com/sangisapusaiteja/skillconnectapp",
+    gradient: "from-pink-500 to-rose-500",
   },
   {
     title: "Portfolio Website",
@@ -150,7 +160,7 @@ export const projects: Project[] = [
       "Personal developer portfolio showcasing UI engineering skills and responsive design expertise. Built with React.js and Tailwind CSS, focusing on modern layouts, smooth interactions, and performance-optimized rendering.",
     tech: ["React.js", "Tailwind CSS"],
     liveLink: "https://saitejasangisapu.vercel.app/",
-    githubLink: "#",
+    githubLink: "https://github.com/sangisapusaiteja/portfolio",
     gradient: "from-orange-500 to-amber-500",
   },
 ];
@@ -229,3 +239,31 @@ export const contactContent = {
   footerText:
     'Built with <span class="text-red-500">♥</span> using Next.js, TypeScript & Tailwind CSS',
 };
+
+// --- Portfolio Version History ---
+export interface PortfolioVersion {
+  version: string;
+  year: string;
+  description: string;
+  url: string;
+  technologies: string[];
+  thumbnail?: string;
+}
+
+export const portfolioVersions: PortfolioVersion[] = [
+  {
+    version: "v2.0",
+    year: "2026",
+    description:
+      "Current version - Modern glassmorphism design with smooth animations",
+    url: "https://saitejasangisapu2003.vercel.app/",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+  },
+  {
+    version: "v1.0",
+    year: "2025",
+    description: "Previous portfolio with minimalist design",
+    url: "https://saitejasangisapu.vercel.app/",
+    technologies: ["React.js", "CSS", "JavaScript"],
+  },
+];
