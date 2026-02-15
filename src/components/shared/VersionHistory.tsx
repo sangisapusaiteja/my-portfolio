@@ -18,10 +18,10 @@ export default function VersionHistory() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-50 glass p-4 rounded-full group cursor-pointer glow-blue will-change-transform"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 glass p-3 sm:p-4 rounded-full group cursor-pointer glow-blue will-change-transform"
         aria-label="View portfolio version history"
       >
-        <History className="w-6 h-6 text-primary group-hover:text-secondary transition-colors duration-300" />
+        <History className="w-5 h-5 sm:w-6 sm:h-6 text-primary group-hover:text-secondary transition-colors duration-300" />
 
         {/* Tooltip */}
         <div className="absolute bottom-full right-0 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
@@ -56,7 +56,7 @@ export default function VersionHistory() {
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               transition={{ duration: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
               onClick={(e) => e.stopPropagation()}
-              className="relative glass p-6 sm:p-8 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto glow-purple"
+              className="relative glass p-4 sm:p-6 md:p-8 rounded-2xl max-w-3xl w-full max-h-[85vh] overflow-y-auto glow-purple"
             >
               {/* Close Button */}
               <button
@@ -96,7 +96,7 @@ export default function VersionHistory() {
                       <div className="absolute left-[19px] top-12 w-0.5 h-[calc(100%+1rem)] bg-linear-to-b from-primary/50 to-transparent" />
                     )}
 
-                    <div className="flex gap-4 sm:gap-6">
+                    <div className="flex gap-3 sm:gap-6">
                       {/* Version Badge */}
                       <div className="relative flex-shrink-0">
                         <div className="w-10 h-10 rounded-full bg-linear-to-r from-primary to-secondary flex items-center justify-center text-white font-bold text-sm glow-blue">
@@ -105,7 +105,7 @@ export default function VersionHistory() {
                       </div>
 
                       {/* Content */}
-                      <div className="flex-1 glass p-4 sm:p-6 rounded-xl hover:scale-[1.02] transition-transform duration-300 will-change-transform">
+                      <div className="flex-1 glass p-3 sm:p-4 md:p-6 rounded-xl hover:scale-[1.02] transition-transform duration-300 will-change-transform">
                         <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
                           <div>
                             <h3 className="text-lg sm:text-xl font-bold text-white">

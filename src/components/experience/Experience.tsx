@@ -11,15 +11,15 @@ interface TimelineItemProps {
   isInView: boolean;
 }
 
-function TimelineItem({ experience, index, isInView }: TimelineItemProps) {
+function TimelineItem({ experience, index }: TimelineItemProps) {
   const itemRef = useRef(null);
   const itemInView = useInView(itemRef, { once: true, margin: "-50px" });
 
   return (
     <motion.div
       ref={itemRef}
-      initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-      animate={itemInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+      initial={{ opacity: 0, y: 30 }}
+      animate={itemInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ delay: index * 0.2, duration: 0.6 }}
       className="relative"
     >

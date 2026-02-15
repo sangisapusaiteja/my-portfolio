@@ -22,7 +22,7 @@ function TechCard({ tech, index, isInView }: TechCardProps) {
       animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
       transition={{ delay: index * 0.05, duration: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
       whileHover={{ scale: 1.05, y: -8 }}
-      className="glass p-6 sm:p-8 rounded-2xl text-center cursor-pointer group relative overflow-hidden will-change-transform"
+      className="glass p-4 sm:p-6 md:p-8 rounded-2xl text-center cursor-pointer group relative overflow-hidden will-change-transform"
     >
       {/* Gradient Border Animation */}
       <div className="absolute inset-0 bg-linear-to-br from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl blur-sm" />

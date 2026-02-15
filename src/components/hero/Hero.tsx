@@ -86,7 +86,7 @@ export default function Hero() {
             <Button
               onClick={scrollToProjects}
               size="lg"
-              className="glass hover:shadow-glow-blue transition-all duration-300 text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 bg-primary/20 border border-primary/50 backdrop-blur-lg w-full sm:w-auto"
+              className="glass hover:shadow-glow-blue transition-all duration-300 text-sm sm:text-lg px-5 sm:px-8 py-4 sm:py-6 bg-primary/20 border border-primary/50 backdrop-blur-lg w-full sm:w-auto"
             >
               View Projects
               <ArrowDown className="ml-2 h-5 w-5" />
@@ -96,7 +96,7 @@ export default function Hero() {
               onClick={scrollToContact}
               size="lg"
               variant="outline"
-              className="glass hover:shadow-glow-purple text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 border-2 border-white/20 hover:border-primary/50 hover:bg-primary/10 backdrop-blur-lg transition-all duration-300 w-full sm:w-auto"
+              className="glass hover:shadow-glow-purple text-sm sm:text-lg px-5 sm:px-8 py-4 sm:py-6 border-2 border-white/20 hover:border-primary/50 hover:bg-primary/10 backdrop-blur-lg transition-all duration-300 w-full sm:w-auto"
             >
               <Mail className="mr-2 h-5 w-5" />
               Contact Me
@@ -106,7 +106,7 @@ export default function Hero() {
               asChild
               size="lg"
               variant="outline"
-              className="glass hover:shadow-glow-cyan text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 border-2 border-white/20 hover:border-secondary/50 hover:bg-secondary/10 backdrop-blur-lg transition-all duration-300 w-full sm:w-auto"
+              className="glass hover:shadow-glow-cyan text-sm sm:text-lg px-5 sm:px-8 py-4 sm:py-6 border-2 border-white/20 hover:border-secondary/50 hover:bg-secondary/10 backdrop-blur-lg transition-all duration-300 w-full sm:w-auto"
             >
               <a href={personalInfo.resumeUrl} download>
                 <Download className="mr-2 h-5 w-5" />

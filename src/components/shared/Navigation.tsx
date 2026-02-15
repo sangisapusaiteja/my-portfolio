@@ -37,7 +37,7 @@ export default function Navigation() {
         transition={{ duration: 0.6 }}
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? "bg-[#0a0a0a]/80 backdrop-blur-xl"
+            ? "md:bg-[#0a0a0a]/80 md:backdrop-blur-xl"
             : "bg-transparent"
         }`}
       >
@@ -77,7 +77,7 @@ export default function Navigation() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden relative glass p-3 rounded-xl glow-blue group overflow-hidden"
+              className="md:hidden relative p-2.5 rounded-xl bg-[#1a1a2e] border border-white/10 group overflow-hidden"
             >
               {/* Gradient background on hover */}
               <div className="absolute inset-0 bg-linear-to-br from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

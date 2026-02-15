@@ -76,7 +76,7 @@ export default function Contact() {
                 <Button
                   asChild
                   size="lg"
-                  className="glass glow-purple hover:glow-blue transition-all duration-300 text-lg px-10 py-7 bg-gradient-to-r from-primary to-secondary border-0"
+                  className="glass glow-purple hover:glow-blue transition-all duration-300 text-sm sm:text-lg px-6 sm:px-10 py-5 sm:py-7 bg-gradient-to-r from-primary to-secondary border-0"
                 >
                   <a href={personalInfo.email}>
                     <Send className="mr-2 h-5 w-5" />
@@ -137,7 +137,7 @@ export default function Contact() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="glass text-lg px-8 py-6 border-2 border-white/20 hover:border-secondary/50 hover:bg-secondary/10 backdrop-blur-lg transition-all duration-300"
+                  className="glass text-sm sm:text-lg px-6 sm:px-8 py-4 sm:py-6 border-2 border-white/20 hover:border-secondary/50 hover:bg-secondary/10 backdrop-blur-lg transition-all duration-300"
                 >
                   <a href={personalInfo.resumeUrl} download>
                     <Download className="mr-2 h-5 w-5" />
