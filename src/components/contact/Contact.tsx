@@ -54,7 +54,7 @@ export default function Contact() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="glass p-12 rounded-3xl glow-blue relative overflow-hidden"
+            className="glass p-6 sm:p-8 md:p-12 rounded-3xl glow-blue relative overflow-hidden"
           >
             {/* Animated gradient border */}
             <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent opacity-20 blur-3xl animate-pulse" />
@@ -97,7 +97,7 @@ export default function Contact() {
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ delay: 0.8 }}
-                className="grid grid-cols-1 md:grid-cols-3 gap-4"
+                className="grid grid-cols-3 gap-3 sm:gap-4"
               >
                 {socialLinks.map((social, index) => {
                   const Icon = iconMap[social.icon];
@@ -111,14 +111,14 @@ export default function Contact() {
                       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                       transition={{ delay: 0.9 + index * 0.1 }}
                       whileHover={{ scale: 1.05, y: -5 }}
-                      className="glass p-6 rounded-xl text-center group cursor-pointer border border-white/10 hover:border-primary/50 transition-all duration-300"
+                      className="glass p-3 sm:p-4 md:p-6 rounded-xl text-center group cursor-pointer border border-white/10 hover:border-primary/50 transition-all duration-300"
                     >
                       <div
-                        className={`w-16 h-16 mx-auto rounded-full bg-gradient-to-r ${social.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 glow-blue`}
+                        className={`w-8 h-8 sm:w-10 sm:h-10 md:w-16 md:h-16 mx-auto rounded-full bg-gradient-to-r ${social.color} flex items-center justify-center mb-2 md:mb-4 group-hover:scale-110 transition-transform duration-300 glow-blue`}
                       >
-                        <Icon className="w-8 h-8 text-white" />
+                        <Icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-8 md:h-8 text-white" />
                       </div>
-                      <h4 className="text-white font-semibold group-hover:gradient-text transition-all duration-300">
+                      <h4 className="text-white text-xs sm:text-sm md:text-base font-semibold group-hover:gradient-text transition-all duration-300">
                         {social.name}
                       </h4>
                     </motion.a>
