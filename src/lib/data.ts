@@ -146,6 +146,15 @@ export const projects: Project[] = [
     gradient: "from-purple-500 to-violet-500",
   },
   {
+    title: "Interview Handbook (Interactive Interview Preparation App)",
+    description:
+      "Frontend-focused interactive interview preparation platform designed for quick revision of core concepts like DSA with JavaScript, HTML, CSS, and Next.js. Includes concept explanations, step-by-step visualizations, animated demonstrations, in-browser code editor with console output, and structured topic navigation for efficient interview preparation.",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    liveLink: "https://my-interview-handbook.vercel.app/",
+    githubLink: "https://github.com/sangisapusaiteja/interview-handbook",
+    gradient: "from-blue-500 to-cyan-500",
+  },
+  {
     title: "Skill Connect",
     description:
       "Comprehensive skill-sharing platform connecting learners with experts across various domains. Implemented user authentication, profile management, course creation, and secure payment processing using Stripe API for seamless transactions.",
