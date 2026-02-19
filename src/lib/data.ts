@@ -246,7 +246,7 @@ export const contactContent = {
   ctaDescription: "Drop me a message and let's make something amazing together",
   ctaText: "Send me a message",
   footerText:
-    'Built with <span class="text-red-500">♥</span> Love',
+    'Built with <span class="text-red-500">♥</span>',
 };
 
 // --- Portfolio Version History ---
