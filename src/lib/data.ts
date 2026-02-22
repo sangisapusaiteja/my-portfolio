@@ -151,7 +151,7 @@ export const projects: Project[] = [
       "Frontend-focused interactive interview preparation platform designed for quick revision of core concepts like DSA with JavaScript, HTML, CSS, and Next.js. Includes concept explanations, step-by-step visualizations, animated demonstrations, in-browser code editor with console output, and structured topic navigation for efficient interview preparation.",
     tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     liveLink: "https://my-interview-handbook.vercel.app/",
-    githubLink: "https://github.com/sangisapusaiteja/interview-handbook",
+    githubLink: "https://github.com/sangisapusaiteja/InterviewHandboo",
     gradient: "from-blue-500 to-cyan-500",
   },
   {
