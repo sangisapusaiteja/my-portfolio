@@ -265,14 +265,14 @@ export const portfolioVersions: PortfolioVersion[] = [
     year: "2026",
     description:
       "Current version - Modern glassmorphism design with smooth animations",
-    url: "https://saitejasangisapu2003.vercel.app/",
+    url: "https://saitejasangisapu.vercel.app/",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
   },
   {
     version: "v1.0",
     year: "2025",
     description: "Previous portfolio with minimalist design",
-    url: "https://saitejasangisapu.vercel.app/",
+    url: "https://saitejasangisapu-v1.vercel.app/",
     technologies: ["React.js", "CSS", "JavaScript"],
   },
 ];
