@@ -128,7 +128,7 @@ Vercel auto-detects Next.js and handles builds and deployments.
 ## Contact
 
 **Saiteja Sangisapu**
-- Email: tejasai38409@gmail.com
+- Email: saitejasangisapu@gmail.com
 - LinkedIn: [linkedin.com/in/saiteja-sangisapu](https://linkedin.com/in/saiteja-sangisapu)
 - GitHub: [github.com/saiteja-sangisapu](https://github.com/saiteja-sangisapu)
 

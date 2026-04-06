@@ -10,7 +10,7 @@ export const personalInfo = {
   description:
     "Crafting exceptional digital experiences with modern web technologies. Specialized in building scalable full-stack applications with a focus on performance and user experience.",
   resumeUrl: "/resume.pdf",
-  email: "mailto:tejasai38409@gmail.com",
+  email: "mailto:saitejasangisapu@gmail.com",
   roles: [
     "Full-Stack Developer",
     "React Developer",
@@ -220,7 +220,7 @@ export const socialLinks: SocialLink[] = [
   {
     name: "Email",
     icon: "Mail",
-    link: "mailto:tejasai38409@gmail.com",
+    link: "mailto:saitejasangisapu@gmail.com",
     color: "from-blue-500 to-cyan-500",
   },
   {
@@ -245,8 +245,7 @@ export const contactContent = {
   ctaTitle: "Ready to start a project?",
   ctaDescription: "Drop me a message and let's make something amazing together",
   ctaText: "Send me a message",
-  footerText:
-    'Built with <span class="text-red-500">♥</span>',
+  footerText: 'Built with <span class="text-red-500">♥</span>',
 };
 
 // --- Portfolio Version History ---
