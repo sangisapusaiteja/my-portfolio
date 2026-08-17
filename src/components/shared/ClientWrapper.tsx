@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Navigation from "@/components/shared/Navigation";
 import CustomCursor from "@/components/shared/CustomCursor";
-import VersionHistory from "@/components/shared/VersionHistory";
 import Loader from "@/components/shared/Loader";
 import SmoothScroll from "@/components/shared/SmoothScroll";
 
@@ -20,7 +19,6 @@ export default function ClientWrapper({
       <SmoothScroll>
         <Navigation />
         <CustomCursor />
-        <VersionHistory />
         {children}
       </SmoothScroll>
     </>

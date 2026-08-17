@@ -10,7 +10,7 @@ export const personalInfo = {
   description:
     "Crafting exceptional digital experiences with modern web technologies. Specialized in building scalable full-stack applications with a focus on performance and user experience.",
   resumeUrl: "/resume.pdf",
-  email: "mailto:saitejasangisapu@gmail.com",
+  email: "mailto:saitejasangisapu@tejaverse.org",
   roles: [
     "Full-Stack Developer",
     "React Developer",
@@ -154,24 +154,6 @@ export const projects: Project[] = [
     githubLink: "https://github.com/sangisapusaiteja/InterviewHandbook",
     gradient: "from-blue-500 to-cyan-500",
   },
-  {
-    title: "Skill Connect",
-    description:
-      "Comprehensive skill-sharing platform connecting learners with experts across various domains. Implemented user authentication, profile management, course creation, and secure payment processing using Stripe API for seamless transactions.",
-    tech: ["Next.js", "Tailwind CSS", "PostgreSQL", "Supabase"],
-    liveLink: "https://skillconnect-2025.vercel.app/",
-    githubLink: "https://github.com/sangisapusaiteja/skillconnectapp",
-    gradient: "from-pink-500 to-rose-500",
-  },
-  {
-    title: "Portfolio Website",
-    description:
-      "Personal developer portfolio showcasing UI engineering skills and responsive design expertise. Built with React.js and Tailwind CSS, focusing on modern layouts, smooth interactions, and performance-optimized rendering.",
-    tech: ["React.js", "Tailwind CSS"],
-    liveLink: "https://saitejasangisapu.vercel.app/",
-    githubLink: "https://github.com/sangisapusaiteja/portfolio",
-    gradient: "from-orange-500 to-amber-500",
-  },
 ];
 
 // --- Experience ---
@@ -186,7 +168,7 @@ export const experiences: ExperienceItem[] = [
   {
     company: "TECHVED Consulting India Pvt. Ltd.",
     role: "Software Developer",
-    duration: "Jan 2025 – Present | Bengaluru, India",
+    duration: "Jan 2025 – July 2026 | Bengaluru, India",
     achievements: [
       "Architected and maintained scalable web applications using React.js, TypeScript, Tailwind CSS, PostgreSQL, and Supabase",
       "Designed and optimized RESTful APIs to enable seamless front-end and back-end integration",
@@ -220,7 +202,7 @@ export const socialLinks: SocialLink[] = [
   {
     name: "Email",
     icon: "Mail",
-    link: "mailto:saitejasangisapu@gmail.com",
+    link: "mailto:saitejasangisapu@tejaverse.org",
     color: "from-blue-500 to-cyan-500",
   },
   {
